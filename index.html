@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Name Selector</title>
+        <title>Lucky Me Lottery</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -21,23 +21,21 @@
 
     <body>
         <div class="container">
-            <h1 class="text-center">Name Selector</h1>
-            <p class="text-center">Input a list of names in the text box below, the computer will display the names in a box and then select one from the list.</p>
-            <input class="form-control text-center" type="text" placeholder="Input names here..." aria-label="default input example" id="nameInputBox">
-            <div class="row text-center mt-3">
-                <div class="col-6 overflow-auto" id="listNameDisplay">
-                    <!--Javascript Fills-->
-                </div>
-                <div class="col-6 overflow-auto" id="SelectedNameDisplay">
-                    <!--Javasctipt Fills-->
-                </div>
+            <h1 class="text-center">Lucky Me Lottery</h1>
+            <p class="text-center">Enter names in the text box below, the computer will display the names in a box and then select one from the list using the "Select Name" button.</p>
+            <div class="text-center mt-4">
+                <input class="form-control text-center d-inline" type="text" placeholder="Enter name..." aria-label="input box" id="nameInput">
+                <button type="button" class="btn btn-primary d-inline" id="addNameBtn">Add Name</button>
             </div>
-            <div class="row mt-4">
-                <div class="col-6 text-center">
-                    <button type="button" class="btn btn-light" id="chooseName">Select Names</button>
+            <div class="row text-center mt-3">
+                <div class="col-4 overflow-auto">
+                    <ul id="nameList" class="list-group"></ul>
                 </div>
-                <div class="col-6 text-center">
-                    <button type="button" class="btn btn-light" id="addNames">Add Names</button>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary text-center" id="pickRandomBtn">Select Name</button>
+                </div>
+                <div class="col-4 overflow-auto" id="randomName">
+                    
                 </div>
                 
             </div>
