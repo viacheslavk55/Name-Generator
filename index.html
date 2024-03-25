@@ -8,7 +8,12 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
         <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -21,11 +26,17 @@
 
     <body>
         <div class="container">
-            <h1 class="text-center">Lucky Me Lottery</h1>
-            <p class="text-center">Enter names in the text box below, the computer will display the names in a box and then select one from the list using the "Select Name" button.</p>
+            <h1 class="text-center mt-5 mb-4 rakkas-regular">Lucky Me Lottery</h1>
+            <h4 class="text-center caveat-inter">Enter names in the text box below, the computer will display the names in a box and then select one from the list using the "Select Name" button.</h4>
             <div class="text-center mt-4">
                 <input class="form-control text-center d-inline" type="text" placeholder="Enter name..." aria-label="input box" id="nameInput">
-                <button type="button" class="btn btn-primary d-inline" id="addNameBtn">Add Name</button>
+                <button class="button d-inline" id="addNameBtn" style="position: absolute;">
+                    <div style="position: relative; top: 50%; transform: translateY(-50%);">
+                        <svg style="justify-content: center;" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 20 20" height="20" fill="none" class="svg-icon"><g stroke-width="1.5" stroke-linecap="round" stroke="#54a0f7"><circle r="7.5" cy="10" cx="10"></circle><path d="m9.99998 7.5v5"></path><path d="m7.5 9.99998h5"></path></g></svg>
+                        <span class="lable">Add</span>
+                    </div>
+                    
+                </button>
             </div>
             <div class="row text-center mt-3">
                 <div class="col-4 overflow-auto">
