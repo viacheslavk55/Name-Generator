@@ -27,5 +27,26 @@ function displayNames() {
     }
 }
 
+function pickRandomName() {
+    const randomNameDiv = document.getElementById('randomName')
+    randomNameDiv.textContent = ''
+
+    //generate and select a random name from the list
+    const randomNumber = Math.floor(Math.random() * namesArray.length)
+    const randomName = namesArray[randomNumber]
+
+    randomNameDiv.textContent = randomName
+    namesArray.splice(randomNumber, 1)
+
+    displayNames();
+    const element = document.getElementById('randomName');
+    element.classList.remove('d-none');
+}
+if (pickRandomName === 0) {
+    const element = document.getElementById('randomName');
+    element.classList.add('d-none');
+}
 
 document.getElementById('addNameBtn').addEventListener('click', addName)
+
+document.getElementById('pickRandomBtn').addEventListener('click', pickRandomName)
