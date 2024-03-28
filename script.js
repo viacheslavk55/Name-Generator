@@ -39,14 +39,21 @@ function pickRandomName() {
     namesArray.splice(randomNumber, 1)
 
     displayNames();
-    const element = document.getElementById('randomName');
-    element.classList.remove('d-none');
+    
 }
-if (pickRandomName === 0) {
-    const element = document.getElementById('randomName');
-    element.classList.add('d-none');
-}
-
+   
 document.getElementById('addNameBtn').addEventListener('click', addName)
 
-document.getElementById('pickRandomBtn').addEventListener('click', pickRandomName)
+document.getElementById('pickRandomBtn').addEventListener('click', function() {
+    pickRandomName()
+    updateRandomNameVisibility()
+})
+
+function updateRandomNameVisibility() {
+    const element = document.getElementById('randomName')
+    if (namesArray.length > 0) {
+        element.classList.remove('d-none')
+    } else {
+        element.classList.add('d-none')
+    }
+}
