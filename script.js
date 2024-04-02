@@ -4,13 +4,17 @@ const namesArray = []
 function addName() {
     const nameInput = document.getElementById('nameInput')
     const name = nameInput.value.trim()
-    namesArray.push(name)
-    displayNames()
-    nameInput.value = ''
+    if (name !== '') {
+        namesArray.push(name);
+        displayNames();
+        nameInput.value = '';
+    } else {
+        alert('Please enter a valid name.'); // tell the user to put in a name
+    }
 }
 
-function displayNames() {
-    const nameList = document.getElementById('nameList')
+function displayNames() { 
+    const nameList = document.getElementById('nameList') //shows the inputted names
     nameList.innerHTML = ''
 
     for (let i = 0; i < namesArray.length; i++) {
@@ -42,7 +46,7 @@ function pickRandomName() {
     
 }
    
-document.getElementById('addNameBtn').addEventListener('click', addName)
+document.getElementById('addNameBtn').addEventListener('click', addName) //runs the functions
 
 document.getElementById('pickRandomBtn').addEventListener('click', function() {
     pickRandomName()
@@ -57,3 +61,13 @@ function updateRandomNameVisibility() {
         element.classList.add('d-none')
     }
 }
+
+function handleKeyPress(event) { //makes it so enter works to call the function
+    if (event.keyCode === 13) {
+        addName();
+    }
+}
+
+var input = document.getElementById("nameInput");
+
+input.addEventListener("keypress", handleKeyPress);
